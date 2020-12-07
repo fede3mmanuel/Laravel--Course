@@ -19,6 +19,12 @@ class CursoController extends Controller
     }
 
     public function store(Request $request) {
+
+        $request->validate([
+            'name' => 'required|max:10',
+            'descripcion' => 'required|min:10',
+            'categoria' => 'required'
+        ]);
         //return $request->all();
         $curso = new Curso();
 
@@ -49,6 +55,13 @@ class CursoController extends Controller
 
     public function update(Request $request, Curso $curso){
         //return $request->all();
+        
+        $request->validate([
+            'name' => 'required',
+            'descripcion' => 'required',
+            'categoria' => 'required'
+        ]);
+
         $curso->name = $request->name;
         $curso->descripcion = $request->descripcion;
         $curso->categoria = $request->categoria;
