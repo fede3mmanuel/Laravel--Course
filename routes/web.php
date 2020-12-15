@@ -15,12 +15,13 @@ use App\Http\Controllers\CursoController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
 //Route::resource('asignaturas', CursoController::class)->parameters(['asignaturas' => 'curso'])->names('cursos');
 
 Route::resource('cursos', CursoController::class);
 
+Route::view('nosotros', 'nosotros')->name('nosotros');
 
 //Route::get('/', 'HomeController');
 

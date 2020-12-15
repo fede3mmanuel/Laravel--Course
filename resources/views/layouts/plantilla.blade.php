@@ -7,12 +7,22 @@
     {{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
     <!-- Favicon 
     estilos-->
+    <style>
+        .active{
+            color:red;
+            font-weight: bold;
+        }
+    </style>
+
 </head>
 <body>
     <!-- header -->
     <!-- nav -->
+    
+    @include('layouts.partials.header')
+
     @yield('content')
-    <!-- footer -->
+    @include('layouts.partials.footer')
     <!-- script -->
 </body>
 </html>
